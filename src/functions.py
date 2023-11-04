@@ -55,6 +55,8 @@ class Functions:
         )
         self.CURRENT_UUID = "CURRENT_UUID"
         s = Service(ChromeDriverManager().install())
+        # driver_path = os.getenv("CHROME_DRIVER_PATH")
+        # s = Service(driver_path)
         options = webdriver.ChromeOptions()
         # Open externally not with chrome's pdf viewer
         self.PROFILE = {
