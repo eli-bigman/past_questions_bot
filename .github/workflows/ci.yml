@@ -6,13 +6,13 @@
 # Runs flake8 for linting.
 # Runs pytest for testing.
 
-name: ci
+name: Build and Test
 
 on:
   push:
-  #   branches: [ "development" ]
-  # pull_request:
-  #   branches: [ "development" ]
+    branches: [ "development" ]
+  pull_request:
+    branches: [ "development" ]
 
 permissions:
   contents: read
