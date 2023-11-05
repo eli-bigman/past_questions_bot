@@ -259,7 +259,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     cleaned_user_input = validate_user_input(update.message.text)
     if cleaned_user_input is None:
         return await update.message.reply_text(
-            "Please enter a valid past question name (eg. dcit 103, math 122, ugrc 110)."
+            "Please enter a valid course code (eg. dcit 103, math 122, ugrc 110)."
         )
     await update.message.reply_text(
         f"Searching database for {cleaned_user_input} past questions..."
@@ -324,7 +324,7 @@ async def error_handler(
         logger.exception("Exception while handling an update.")
         await context.bot.send_message(
             chat_id=await get_chat_id(update, context),
-            text="Unexpected error occurred. Try again. If error persists contact @Daquiver.",
+            text="Unexpected error occurred. Try again. If error persists contact @eli_bigman.",
         )
         message = f"Traceback: {traceback.format_exc()}"
         await context.bot.send_message(chat_id=DEVELOPER_CHAT_ID, text=message)
